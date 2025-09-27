@@ -18,7 +18,6 @@ namespace WebApplication1.Services
             return GetAllCategorys.Select(x => new CartModel
             {
                 CartId =x.CartId,
-                OrderId =x.OrderId,
                 Quantity =x.Quantity,
                 Size =x.Size,
             }).ToList();
@@ -31,7 +30,6 @@ namespace WebApplication1.Services
             return new CartModel
             {
                 CartId = Result.CartId,
-                OrderId = Result.OrderId,
                 Quantity = Result.Quantity,
                 Size = Result.Size,
             };
@@ -40,7 +38,6 @@ namespace WebApplication1.Services
         {
             var cart = new Cart
             {
-                OrderId = cartDTO.OrderId,
                 Quantity = cartDTO.Quantity,
                 Size = cartDTO.Size,
             };
@@ -50,7 +47,6 @@ namespace WebApplication1.Services
             return new CartModel
             {
                 CartId = created.CartId,
-                OrderId = created.OrderId,
                 Quantity = created.Quantity,
                 Size = created.Size,
             };
@@ -61,7 +57,6 @@ namespace WebApplication1.Services
             var cart = new Cart
             {
                 CartId = cartId,
-                OrderId = cartDTO.OrderId,
                 Quantity = cartDTO.Quantity,
                 Size = cartDTO.Size,
             };
@@ -72,7 +67,6 @@ namespace WebApplication1.Services
             return new CartModel
             {
                 CartId = result.CartId,
-                OrderId = result.OrderId,
                 Quantity = result.Quantity,
                 Size = result.Size,
             };

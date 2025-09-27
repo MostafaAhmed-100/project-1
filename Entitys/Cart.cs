@@ -1,5 +1,7 @@
 ﻿
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using WebApplication1.Entitys;
 namespace WebApplication1.Entities
 {
     public class Cart
@@ -13,9 +15,8 @@ namespace WebApplication1.Entities
         [Required]
         public int Quantity { get; set; }
 
-        [Required]
-        public int OrderId { get; set; }
-
         public ICollection<Product> Products { get; set; } = new List<Product>();
+
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

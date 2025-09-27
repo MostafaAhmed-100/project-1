@@ -32,7 +32,6 @@ namespace WebApplication1.Repository
         {
              var Result = await _context.Carts.Include(p => p.Products).FirstOrDefaultAsync(c => c.CartId == Id);
             if (Result == null) return null;
-            Result.OrderId = cart.OrderId;
             Result.Quantity = cart.Quantity;
             Result.Size = cart.Size;
             await _context.SaveChangesAsync();
