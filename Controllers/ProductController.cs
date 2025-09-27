@@ -9,7 +9,7 @@ namespace WebApplication1.Controllers
     [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
-        ResposeModel response = new();
+        ResponsModel response = new();
 
         private readonly IProductService _productService;
 

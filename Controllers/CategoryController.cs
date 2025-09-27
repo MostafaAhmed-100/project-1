@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Azure;
+using Microsoft.AspNetCore.Mvc;
 using WebApplication1.DTOS;
 using WebApplication1.Models;
 using WebApplication1.Services;
@@ -9,7 +10,7 @@ namespace WebApplication1.Controllers
     [Route("api/[controller]")]
     public class CategoryController : ControllerBase
     {
-        ResposeModel response = new();
+        ResponsModel response = new();
         private readonly ICategoryService _IcategoryService;
 
         public CategoryController(ICategoryService icategoryService)

@@ -12,7 +12,8 @@ namespace WebApplication1
         public DbSet<Product> Products { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Address> Address { get; set; }
-        public DbSet<User> users { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Order> Order { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

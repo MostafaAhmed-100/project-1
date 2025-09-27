@@ -9,7 +9,7 @@ namespace WebApplication1.Controllers
     [Route("api/[controller]")]
     public class CartController : ControllerBase
     {
-        ResposeModel response = new();
+        ResponsModel response = new();
         private readonly ICartService _cartService;
 
         public CartController(ICartService cartService)

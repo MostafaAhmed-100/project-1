@@ -1,6 +1,6 @@
 ﻿namespace WebApplication1.Models
 {
-    public class ResposeModel
+    public class ResponsModel
     {
         public bool Status { get; set; }
         public string StatusMessage { get; set; }
