@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace WebApplication1.Services
 {
-    public class UserService : IUserService
+    public class UserService : IUserService 
     {
         private readonly IUserRepository _userRepository;
 
@@ -48,8 +48,7 @@ namespace WebApplication1.Services
                 UserId = userdto.UserId,
                 UserName = userdto.UserName,
                 UserEmail = userdto.UserEmail,
-                UserPassword = userdto.UserPassword,
-
+                UserPassword = _passwordHasher.HashPassword(userdto.UserEmail + userdto.UserName, userdto.UserPassword)
             };
             var Create = await _userRepository.CreateUser(user);
             return new UserModel
