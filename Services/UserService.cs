@@ -2,12 +2,15 @@
 using WebApplication1.Entitys;
 using WebApplication1.Models;
 using WebApplication1.Repository;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebApplication1.Services
 {
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
+
+        private readonly PasswordHasher<string> _passwordHasher = new PasswordHasher<string>();
 
         public UserService(IUserRepository userRepository)
         {
