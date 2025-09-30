@@ -9,7 +9,7 @@ namespace WebApplication1.Services
         public Task<List<UserModel>> GetUsers();
         public Task<UserModel?> GetUserById(int id);
 
-        public Task<UserModel> CreateUser(UserDTO userdto);
+        //public Task<UserModel> CreateUser(UserDTO userdto);
 
         public Task<UserDTO?> UpdateUser(int id ,User user);
 

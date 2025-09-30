@@ -22,12 +22,12 @@ namespace WebApplication1.Repository
             var GetById = await _AppDbcontext.Users.Include(a => a.Addresses).FirstOrDefaultAsync(U => U.UserId == id);
             return GetById;
         }
-        public async Task<User> CreateUser(User user)
-        {
-            var CreateUser = await _AppDbcontext.Users.AddAsync(user);
-            await _AppDbcontext.SaveChangesAsync();
-            return user;
-        }
+       // public async Task<User> CreateUser(User user)
+       // {
+       //     var CreateUser = await _AppDbcontext.Users.AddAsync(user);
+       //     await _AppDbcontext.SaveChangesAsync();
+       //     return user;
+       // }
 
         public async Task<User?> UpdateByIdAsync(int id, User user)
         {

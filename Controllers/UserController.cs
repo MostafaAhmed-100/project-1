@@ -44,14 +44,6 @@ namespace WebApplication1.Controllers
             }
             return Ok(response);
         }
-        [HttpPost("Create-User")]
-        public async Task<IActionResult> AddUser(UserDTO userDTO)
-        {
-            var AddUser = await _userService.CreateUser(userDTO);
-            response.Status = true;
-            response.StatusMessage = "The User has been successfully Created";
-            return Ok(response);
-        }
         [HttpPut("Update-User")]
         public async Task<IActionResult> UpdateUser(int id , User user)
         {
