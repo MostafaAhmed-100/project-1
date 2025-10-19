@@ -43,7 +43,6 @@ namespace WebApplication1.Services
         {
             var order = new Order
             {
-                OrderId = orderDTO.OrderId,
                 AddressId = orderDTO.AddressId,
                 CartId = orderDTO.CartId,
                 UserId = orderDTO.UserId,
@@ -51,7 +50,7 @@ namespace WebApplication1.Services
             var CreateOrder = await _orderRepository.Create(order);
             return new OrderModel
             {
-                OrderId = orderDTO.OrderId,
+                OrderId = CreateOrder.OrderId,
                 AddressId = orderDTO.AddressId,
                 UserId = orderDTO.UserId,
             };

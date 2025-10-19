@@ -41,13 +41,13 @@ namespace WebApplication1.Services
             if (Result == null) { return null; }
             return new ProductDTO
             {
+                
                 CategoryId = Result.CategoryId,
-                CategoryName = Result.Category.CategoryName,
-                ProductId = Result.ProductId,
                 ProductName = Result.ProductName,
                 ProductDescription = Result.ProductDescription,
+            
 
-            };
+        };
 
 
         }
@@ -57,6 +57,7 @@ namespace WebApplication1.Services
             {
                 ProductName = product.ProductName,
                 ProductDescription = product.ProductDescription,
+                ImagePath = product.ImagePath,
                 CategoryId = product.CategoryId
             };
 

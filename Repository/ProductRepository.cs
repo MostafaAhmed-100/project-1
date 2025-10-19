@@ -41,6 +41,10 @@ namespace WebApplication1.Repository
             UpdateProduct.ProductDescription = product.ProductDescription;
             UpdateProduct.CategoryId = product.CategoryId;
             UpdateProduct.Category.CategoryName = product.Category.CategoryName;
+            if (!string.IsNullOrEmpty(product.ImagePath))
+            {
+                UpdateProduct.ImagePath = product.ImagePath;
+            }
             await _appDbContext.SaveChangesAsync();
             return UpdateProduct;
         }

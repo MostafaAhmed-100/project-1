@@ -43,7 +43,7 @@ namespace WebApplication1.Controllers
             return Ok(response);
         }
         [HttpPost("Create-Product")]
-        public async Task<IActionResult> CreateProducts(ProductDTO productDTO)
+        public async Task<IActionResult> CreateProducts([FromForm] ProductDTO productDTO)
         {
             var AddProduct = await _productService.CreateProduct(productDTO);
             response.Status = true;
@@ -52,7 +52,7 @@ namespace WebApplication1.Controllers
             return Ok(response);
         }
         [HttpPut("Update-Product{Id , product}")]
-        public async Task<IActionResult> UpdateProduct(int Id, Product product)
+        public async Task<IActionResult> UpdateProduct(int Id, [FromForm] Product product)
         {
             var Update = await _productService.UpdateProduct(Id , product);
             if (Update == null)

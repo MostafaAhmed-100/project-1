@@ -40,11 +40,7 @@ namespace WebApplication1.Services
             var login = await _loginAndRegisterRepository.GetByEmail(email);
             if (login == null) return null;
 
-            var result = _passwordHasher.VerifyHashedPassword(
-                login.UserEmail + login.UserName,  
-                login.UserPassword,                
-                password                    
-            );
+            var result = _passwordHasher.VerifyHashedPassword(login.UserEmail + login.UserName,login.UserPassword, password);
 
             if (result == PasswordVerificationResult.Success)
             {

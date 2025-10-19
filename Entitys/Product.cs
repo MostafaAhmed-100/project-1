@@ -15,6 +15,7 @@ namespace WebApplication1.Entities
 
         [Required, MaxLength(1000)]
         public string ProductDescription { get; set; }
+        public string ImagePath { get; set; }
 
         public int CategoryId { get; set; }
 

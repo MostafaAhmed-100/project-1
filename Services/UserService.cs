@@ -41,23 +41,7 @@ namespace WebApplication1.Services
             };
         }
 
-        //public async Task<UserModel> CreateUser(UserDTO userdto)
-        //{
-        //    var user = new User
-        //    {
-        //        UserId = userdto.UserId,
-        //        UserName = userdto.UserName,
-        //        UserEmail = userdto.UserEmail,
-        //        UserPassword = _passwordHasher.HashPassword(userdto.UserEmail + userdto.UserName, userdto.UserPassword)
-        //    };
-        //    var Create = await _userRepository.CreateUser(user);
-        //    return new UserModel
-        //    {
-        //        UserId = Create.UserId,
-        //        UserName = Create.UserName,
-        //        UserEmail = Create.UserEmail,
-        //    };
-        //}
+        
         public async Task<UserDTO?> UpdateUser(int id, User user)
         {
             var Result = await _userRepository.UpdateByIdAsync(id, user);
@@ -65,7 +49,6 @@ namespace WebApplication1.Services
 
             return new UserDTO
             {
-                UserId = Result.UserId,
                 UserName = Result.UserName,
                 UserEmail = Result.UserEmail,
                 UserPassword = Result.UserPassword,
